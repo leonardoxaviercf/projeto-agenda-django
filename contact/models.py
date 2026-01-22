@@ -11,5 +11,8 @@ class Contact(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
 
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
 # Configurar depois 
 # category (foreign key), show (boolean), owner (foreign key) e picture (imagem)
