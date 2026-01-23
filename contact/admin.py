@@ -13,3 +13,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_max_show_all = (200)
     # list_editable = ('first_name', 'last_name',) Posso editar diretamente pela aba inicial do admin, sem precisar entrar no contato
     list_display_links = ('id', 'phone',)
+
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    ordering = ('id',)
