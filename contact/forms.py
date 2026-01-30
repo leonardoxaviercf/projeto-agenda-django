@@ -26,6 +26,9 @@ class ContactForm(forms.ModelForm):
             'first_name',
             'last_name',
             'phone',
+            'email',
+            'description',
+            'category',
         )
 
         # widgets = {
@@ -37,8 +40,8 @@ class ContactForm(forms.ModelForm):
         # }
 
     def clean(self):
-        first_name = self.cleaned_data
-        last_name = self.cleaned_data
+        first_name = self.cleaned_data.get('first_name')
+        last_name = self.cleaned_data.get('last_name')
 
         if first_name == last_name:
             msg = ValidationError(
